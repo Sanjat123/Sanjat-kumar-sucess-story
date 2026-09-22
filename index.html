@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanjat Kumar — Success Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F6F5;
+    --bg-raised: #ECF1EF;
+    --ink: #12211D;
+    --ink-soft: #445451;
+    --line: #CBDAD6;
+    --teal: #0E7C74;
+    --teal-deep: #0A5C56;
+    --amber: #C97F1E;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0C1613;
+      --bg-raised: #12201C;
+      --ink: #EAF2EF;
+      --ink-soft: #9FB4AF;
+      --line: #234139;
+      --teal: #3FD9C7;
+      --teal-deep: #7FE9DC;
+      --amber: #E3A552;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0C1613;
+    --bg-raised: #12201C;
+    --ink: #EAF2EF;
+    --ink-soft: #9FB4AF;
+    --line: #234139;
+    --teal: #3FD9C7;
+    --teal-deep: #7FE9DC;
+    --amber: #E3A552;
+  }
+
+  * { box-sizing: border-box; }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--teal-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Theme toggle ---------- */
+  .theme-toggle {
+    position: fixed;
+    top: calc(18px + env(safe-area-inset-top, 0px));
+    right: 18px;
+    z-index: 20;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 88px 0 56px;
+  }
+  .hero .kicker {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    margin: 0 0 18px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(34px, 6vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+    max-width: 15ch;
+  }
+  .hero p.sub {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  /* ---------- Stat line ---------- */
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 48px 0 64px;
+  }
+  .stat {
+    flex: 1 1 140px;
+    padding: 22px 20px 22px 0;
+    border-right: 1px solid var(--line);
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    display: block;
+    line-height: 1.1;
+  }
+  .stat .label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ---------- Story prose ---------- */
+  .story {
+    padding-bottom: 20px;
+  }
+  .story h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0 0 20px;
+  }
+  .story p {
+    font-size: 17px;
+    max-width: 62ch;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  .story p.credit {
+    font-size: 15px;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--teal);
+    padding-left: 16px;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    padding: 56px 0 24px;
+  }
+  .timeline h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0 0 36px;
+  }
+  .entry {
+    position: relative;
+    padding: 0 0 40px 28px;
+    border-left: 1px solid var(--line);
+  }
+  .entry:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .entry::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .entry .when {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .entry h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 8px;
+  }
+  .entry p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  /* ---------- Stack ---------- */
+  .stack {
+    padding: 40px 0 64px;
+    border-top: 1px solid var(--line);
+  }
+  .stack h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 18px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  .tags span {
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    background: var(--bg-raised);
+  }
+
+  /* ---------- Closing ---------- */
+  .closing {
+    padding: 20px 0 90px;
+    border-top: 1px solid var(--line);
+  }
+  .closing h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    margin: 40px 0 14px;
+    max-width: 22ch;
+  }
+  .closing p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+    max-width: 54ch;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* ---------- Motion (single load reveal) ---------- */
+  .hero, .stats { opacity: 0; transform: translateY(10px); animation: rise 0.7s ease forwards; }
+  .stats { animation-delay: 0.12s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero, .stats { animation: none; opacity: 1; transform: none; }
+  }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 520px) {
+    .stat { flex: 1 1 45%; padding: 18px 14px 18px 0; }
+    .stat:nth-child(2n) { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">🌓</button>
+
+<div class="wrap">
+
+  <section class="hero">
+    <p class="kicker">Sanjat Kumar</p>
+    <h1>I build things people actually use — before I've even graduated.</h1>
+    <p class="sub">BCA student at Chandigarh University, freelance full-stack developer, and founder — shipping production software for real clients since my second year.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><span class="num">4</span><span class="label">apps live on the Play Store</span></div>
+    <div class="stat"><span class="num">2,200+</span><span class="label">active users served</span></div>
+    <div class="stat"><span class="num">3</span><span class="label">enterprise contracts signed</span></div>
+    <div class="stat"><span class="num">₹3.6L+</span><span class="label">in contract value delivered</span></div>
+  </section>
+
+  <section class="story">
+    <h2>How it started</h2>
+    <p>I didn't wait for a placement season to start building. Somewhere in the middle of my BCA, I realized the fastest way to actually learn software engineering wasn't another course — it was shipping something real, for someone who'd actually use it and pay for it. So that's what I did.</p>
+    <p>What began as freelance contract work turned into something closer to founding a small studio. I took on client engagements end-to-end — architecture, APIs, database design, deployment — and led a small team of engineers through them using proper Agile sprints, not just vibes. Along the way I signed three enterprise contracts, published four apps to the Play Store, and built systems that now run in production for thousands of real users, not test accounts.</p>
+    <p class="credit">One of my proudest engagements has been the Universal CRM Platform, a multi-tenant SaaS system I built for Maa Enterprises — formalized through an official Chandigarh University office order, under the mentorship and supervision of my HOD, Dr. Arun Kumar Singh.</p>
+  </section>
+
+  <section class="timeline">
+    <h2>The build log</h2>
+
+    <div class="entry">
+      <span class="when">2024</span>
+      <h3>Started my BCA</h3>
+      <p>Began at Chandigarh University — and started treating every assignment as a chance to ship something real instead of just something gradeable.</p>
+    </div>
+
+    <div class="entry">
+      <span class="when">2025</span>
+      <h3>First real client work</h3>
+      <p>Took on freelance engagements through Maa Enterprises. Learned the difference between "it works on my machine" and "it works for a paying client at 2 a.m."</p>
+    </div>
+
+    <div class="entry">
+      <span class="when">2025 – 2026</span>
+      <h3>Built Student Nagari, an EdTech ecosystem</h3>
+      <p>A Flutter app, a companion Partner app, and a React web platform — all live on the Play Store. Later added Campus AI Assistant, a voice-enabled RAG chatbot built with n8n, Pinecone, and OpenAI, so students could just ask questions instead of digging through menus.</p>
+    </div>
+
+    <div class="entry">
+      <span class="when">2026</span>
+      <h3>Find My CU — submitted to Intel</h3>
+      <p>Built a face-recognition photo retrieval platform on Flutter, Firebase, FastAPI, and pgvector, so students could find themselves in thousands of event photos in seconds instead of scrolling forever.</p>
+    </div>
+
+    <div class="entry">
+      <span class="when">Ongoing</span>
+      <h3>Architecting the Universal CRM Platform</h3>
+      <p>A multi-tenant SaaS system, currently in active development for Maa Enterprises — the most ambitious system I've architected so far.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>What I build with</h2>
+    <div class="tags">
+      <span>React.js</span><span>Flutter</span><span>Node.js</span><span>Django REST</span>
+      <span>PostgreSQL</span><span>MongoDB</span><span>Firebase</span><span>AWS EC2</span>
+      <span>Docker</span><span>Git</span>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Still writing this story</h2>
+    <p>I'm not done — this is a running log of what I've shipped so far, not a finished résumé. If you're building something and want someone who treats your product like it's their own, I'd love to talk.</p>
+    <div class="links">
+      <a href="https://github.com/Sanjat123" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:sanjatkumardev@gmail.com">Email</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('theme-pref');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    btn.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDarkNow = current ? current === 'dark' : prefersDark;
+      var next = isDarkNow ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme-pref', next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
